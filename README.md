@@ -1,6 +1,6 @@
-# JJSolutions.TableList.AspNetCore.Mvc
+# JJSolutions.TableList.AspNetCore.TagHelper
 
-TableList HTML Helper for Asp.Net Core 1.1
+TableList render with TAG Helper for .Net Framework and Asp.Net Core 1.1
 
 Create a table with pagination, search and many other features and customizations.
 
@@ -17,7 +17,7 @@ Sample to use:
         public string Email { get; set; }
     }
 ```
-<strong>Controller sample:</strong>
+<strong>Controller sample: (CustomerController.cs)</strong>
 <br>
 ```c#
         public IActionResult Index(string searchString, int? page, string returnUrl = null, string sortOrder = "CustomerId", string sortDirection = "asc")
@@ -195,7 +195,7 @@ And after that, the TableList can be written
 ```html
    <h1>Sample Application</h1>
     
-    <jjsolutions-table-list model="@Model" asp-controller="Controller" asp-action="Index" return-url="@returnUrl">
+    <jjsolutions-table-list model="@Model" asp-controller="Customer" asp-action="Index" return-url="@returnUrl">
         <table-columns>
             <table-column asp-for="CustomerId" header-style="width: 100px;" custom-link="/Controller/Details/{0}" />
             <table-column asp-for="Name" />
