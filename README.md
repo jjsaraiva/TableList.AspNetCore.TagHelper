@@ -222,6 +222,6 @@ And after that, the TableList can be written
 <h2>Nuget Package</h2>
 This component is available in nuget package<br/>
 <strong>JJSolutions.TableList.AspNet.TagHelper</strong><br>
-<strong>JJSolutions.TableList.AspNetCore.TagHelper</strong><
+<strong>JJSolutions.TableList.AspNetCore.TagHelper</strong>
 <br>
 
