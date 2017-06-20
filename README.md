@@ -180,11 +180,11 @@ Sample to use:
 <br><br>
 Install nuget package JJSolutions.TableList.AspNet.TagHelper or JJSolutions.TableList.AspNetCore.TagHelper and register the Tag Helper insert the line below into <strong>_ViewImports.cshtml</strong> file:
 ```c#
-@addTagHelper "*, JJSolutions.TableList.AspNet"
+@addTagHelper "*, JJSolutions.TableList.AspNet.TagHelper"
 ```
 If you choose AspNetCore package, add this line:
 ```c#
-@addTagHelper "*, JJSolutions.TableList.AspNetCore"
+@addTagHelper "*, JJSolutions.TableList.AspNetCore.TagHelper"
 ```
 <br><br>
 <strong>View usage sample:</strong>
