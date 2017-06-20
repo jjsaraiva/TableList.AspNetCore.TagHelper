@@ -196,9 +196,8 @@ The returnUrl is a parameter that need to be buid and encoded with ViewBag varia
 ```c#
         @model List<Customer>;
         @{
-            ViewData["Title"] = "Categoria de Notícia";
+            ViewData["Title"] = "Sample Application";
             var returnUrl = $"{Url.Action("Index")}?page={ViewBag.CurrentPage}&searchString={ViewBag.SearchString}&sortOrder={ViewBag.SortOrder}&sortDirection={ViewBag.SortDirection}";
-            var returnUrlEncoded = System.Net.WebUtility.UrlEncode(returnUrl)
          }
 ```
 <br><br>
