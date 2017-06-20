@@ -176,6 +176,16 @@ Sample to use:
 
 ```
 <br><br>
+###Important!
+Install nuget package JJSolutions.TableList.AspNet.TagHelper or JJSolutions.TableList.AspNetCore.TagHelper and register the Tag Helper insert the line below into <strong>_ViewImports.cshtml</strong> file.
+```c#
+@addTagHelper "*, JJSolutions.TableList.AspNet"
+```
+or
+```c#
+@addTagHelper "*, JJSolutions.TableList.AspNetCore"
+```
+<br><br>
 <strong>View usage sample:</strong>
 <br>
 The model must be a List of Entity that Controller returns <strong>@model List&lt;Customer&gt;</strong>
