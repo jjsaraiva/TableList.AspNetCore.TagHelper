@@ -176,7 +176,7 @@ Sample to use:
 
 ```
 <br><br>
-###Important!
+<h4>Important!</h4>
 Install nuget package JJSolutions.TableList.AspNet.TagHelper or JJSolutions.TableList.AspNetCore.TagHelper and register the Tag Helper insert the line below into <strong>_ViewImports.cshtml</strong> file.
 ```c#
 @addTagHelper "*, JJSolutions.TableList.AspNet"
