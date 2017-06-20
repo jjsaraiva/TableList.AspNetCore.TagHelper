@@ -176,12 +176,12 @@ Sample to use:
 
 ```
 <br><br>
-<h4>Important!</h4>
-Install nuget package JJSolutions.TableList.AspNet.TagHelper or JJSolutions.TableList.AspNetCore.TagHelper and register the Tag Helper insert the line below into <strong>_ViewImports.cshtml</strong> file.
+<h2>Important!</h2>
+Install nuget package JJSolutions.TableList.AspNet.TagHelper or JJSolutions.TableList.AspNetCore.TagHelper and register the Tag Helper insert the line below into <strong>_ViewImports.cshtml</strong> file:
 ```c#
 @addTagHelper "*, JJSolutions.TableList.AspNet"
 ```
-or
+If you choose AspNetCore package, add this line:
 ```c#
 @addTagHelper "*, JJSolutions.TableList.AspNetCore"
 ```
