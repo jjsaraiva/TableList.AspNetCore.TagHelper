@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace JJSolutions.TableList.AspNet.TagHelper
+namespace JJSolutions.TableList.AspNetCore.TagHelper
 {
     public class RenderPagination
     {
@@ -33,14 +33,14 @@ namespace JJSolutions.TableList.AspNet.TagHelper
             // first page always visible
             AddPage(ul, "Primeira Página", "1", 1);
 
-            if (_parentContext.PaginationSettings.CurrentPage <= 5)
+            if (_parentContext.PaginationSettings.CurrentPage < 6)
             {
                 for (int i = 2; i <= Math.Min(5, _parentContext.PaginationSettings.PageCount - 1); i++)
                 {
                     // create page 2 till 5 or less
                     AddPage(ul, $"Página {i}", i.ToString(), i);
                 }
-                if (_parentContext.PaginationSettings.PageCount > 5)
+                if (_parentContext.PaginationSettings.PageCount > 6)
                 {
                     // if have more than 5 pages, include ... to go to page 6 and forward
                     AddPage(ul, "Próximas páginas", "...", 6);
@@ -54,7 +54,7 @@ namespace JJSolutions.TableList.AspNet.TagHelper
                 if (_parentContext.PaginationSettings.PageCount < 10)
                 {
                     // when have less than 10 pages, show more numbers after ...
-                    var limite = _parentContext.PaginationSettings.CurrentPage - 5;
+                    var limite = _parentContext.PaginationSettings.CurrentPage - 6;
                     for (int i = _parentContext.PaginationSettings.CurrentPage - limite; i <= Math.Min(_parentContext.PaginationSettings.CurrentPage + (4 - limite), _parentContext.PaginationSettings.PageCount - 1); i++)
                     {
                         AddPage(ul, $"Página {i}", i.ToString(), i);
@@ -68,7 +68,7 @@ namespace JJSolutions.TableList.AspNet.TagHelper
                         AddPage(ul, $"Página {i}", i.ToString(), i);
                     }
                 }
-                if (_parentContext.PaginationSettings.CurrentPage + 5 <= _parentContext.PaginationSettings.PageCount)
+                if (_parentContext.PaginationSettings.CurrentPage + 6 <= _parentContext.PaginationSettings.PageCount)
                 {
                     // if have more pages, include ... to next pages
                     AddPage(ul, "Próximas páginas", "...", _parentContext.PaginationSettings.CurrentPage + 5);
@@ -76,7 +76,7 @@ namespace JJSolutions.TableList.AspNet.TagHelper
             }
 
             // Check button count, must have at least 6 buttons
-            if (_buttonCount < 6)
+            if (_buttonCount < 6 && _parentContext.PaginationSettings.PageCount > 6)
             {
                 // clear and rebuild the pagination
                 ul.InnerHtml.Clear();
