@@ -2,7 +2,7 @@ using System;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace JJSolutions.TableList.AspNetCore.TagHelper
+namespace JJSolutions.TableList.AspNet.TagHelper
 {
     public class RenderPagination
     {
