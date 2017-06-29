@@ -194,7 +194,7 @@ The model must be a List of Entity that Controller returns <strong>@model List&l
 The returnUrl is a parameter that need to be buid and encoded with ViewBag variables returned by Controller
 <br>
 ```c#
-        @model List<Customer>;
+        @model List<Customer>
         @{
             ViewData["Title"] = "Sample Application";
             var returnUrl = $"{Url.Action("Index")}?page={ViewBag.CurrentPage}&searchString={ViewBag.SearchString}&sortOrder={ViewBag.SortOrder}&sortDirection={ViewBag.SortDirection}";
