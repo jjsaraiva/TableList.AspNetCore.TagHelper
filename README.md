@@ -207,9 +207,9 @@ And after that, the TableList can be written
     
     <jjsolutions-table-list model="@Model" asp-controller="Customer" asp-action="Index" return-url="@returnUrl">
         <table-columns>
-            <table-column asp-for="CustomerId" header-style="width: 100px;" custom-link="/Controller/Details/{0}" />
+            <table-column asp-for="CustomerId" header-style="width: 100px;" custom-link="/Controller/Details/{CustomerId}" />
             <table-column asp-for="Name" />
-            <table-column asp-for="Email" header-style="width: 250px;" custom-link="mailto:{0}" />
+            <table-column asp-for="Email" header-style="width: 250px;" custom-link="mailto:{Email}" />
             <table-column asp-for="Phone" no-sort="true" />
         </table-columns>
         <table-buttons header-style="width: 100px;">
