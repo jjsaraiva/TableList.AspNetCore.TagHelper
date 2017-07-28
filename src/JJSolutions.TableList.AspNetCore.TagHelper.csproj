@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <Description>Table List with search, pagination an many other features. Use exclusive with Asp.Net Core.</Description>
+    <PackageIconUrl>https://raw.githubusercontent.com/jjsaraiva/TableList.AspNetCore.Mvc/master/JJSoftware.TableList.AspNetCore.Mvc.png</PackageIconUrl>
+    <PackageTags>TableList PagedList Pagination Tag Helper</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/jjsaraiva/TableList.AspNetCore.TagHelper</PackageProjectUrl>
+    <Authors>Jimmy J. Saraiva</Authors>
+    <Company>JJSolutions</Company>
+    <Copyright>2017</Copyright>
+    <RepositoryUrl>https://github.com/jjsaraiva/TableList.AspNetCore.TagHelper</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageReleaseNotes>First Release</PackageReleaseNotes>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+    <Version>1.0.6</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.aspnetcore.mvc" Version="1.1.3" />
+    <PackageReference Include="Microsoft.aspnetcore.razor.runtime" Version="1.1.2" />
+  </ItemGroup>
+
+</Project>

@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -26,7 +27,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 */
 
-namespace JJSolutions.TableList.AspNet.TagHelper
+namespace JJSolutions.TableList.AspNetCore.TagHelper
 {
     [RestrictChildren("table-columns","table-buttons","table-settings")]
     //[HtmlTargetElement("jjsolutions-table-list", Attributes = "model, class, style, asp-action, asp-controller, return-url")]
@@ -98,6 +99,15 @@ namespace JJSolutions.TableList.AspNet.TagHelper
             if (_parentContext.SearchSettings.AllowSearch)
             {
                 output.Content.AppendHtml(new RenderSearch(_parentContext).Render());
+            }
+
+            // if no records found, table not displayed
+            if (((IList)Model).Count == 0)
+            {
+                output.TagName = "div";
+                output.TagMode = TagMode.StartTagAndEndTag;
+                output.Content.AppendHtml("<h4 class=\"text-danger\">Nenhum registro encontrado!</h4>");
+                return;
             }
 
             // table

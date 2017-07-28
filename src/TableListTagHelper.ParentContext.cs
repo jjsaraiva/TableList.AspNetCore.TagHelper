@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace JJSolutions.TableList.AspNet.TagHelper
+namespace JJSolutions.TableList.AspNetCore.TagHelper
 {
     public class ParentContext
     {
@@ -13,6 +13,7 @@ namespace JJSolutions.TableList.AspNet.TagHelper
         public string AspController { get; set; }
         public string ReturnUrl { get; set; }
 
+        public string ButtonHeaderTitle { get; set; }
         public string ButtonHeaderClass { get; set; }
         public string ButtonHeaderStyle { get; set; }
         public string ButtonColumnClass { get; set; }

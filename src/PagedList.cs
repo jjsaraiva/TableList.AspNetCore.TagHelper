@@ -8,7 +8,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace JJSolutions.TableList.AspNet.TagHelper
+namespace JJSolutions.TableList.AspNetCore.TagHelper
 {
     public class PagedList<TEntity> : List<TEntity>, IPagedList
     {

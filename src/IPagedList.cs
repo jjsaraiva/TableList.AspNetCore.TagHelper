@@ -5,7 +5,7 @@
 //
 // ********************************************************************************************************
 
-namespace JJSolutions.TableList.AspNet.TagHelper
+namespace JJSolutions.TableList.AspNetCore.TagHelper
 {
     /// <summary>
     /// Interface for PagedList

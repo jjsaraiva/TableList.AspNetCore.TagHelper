@@ -1,11 +1,10 @@
-﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace JJSolutions.TableList.AspNet.TagHelper
+namespace JJSolutions.TableList.AspNetCore.TagHelper
 {
-    [RestrictChildren("table-column"), Serializable]
+    [RestrictChildren("table-column")]
     public class TableColumnsTagHelper : Microsoft.AspNetCore.Razor.TagHelpers.TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -43,6 +42,9 @@ namespace JJSolutions.TableList.AspNet.TagHelper
         [HtmlAttributeName("no-sort")]
         public bool NoSort { get; set; } = false;
 
+        [HtmlAttributeName("special-sort")]
+        public string SpecialSort { get; set; }
+
         [HtmlAttributeName("column-action")]
         public string ColumnAction { get; set; }
 
@@ -51,6 +53,9 @@ namespace JJSolutions.TableList.AspNet.TagHelper
 
         [HtmlAttributeName("custom-link")]
         public string CustomLink { get; set; }
+
+        [HtmlAttributeName("link-target")]
+        public string LinkTarget { get; set; }
 
         [HtmlAttributeName("on-click")]
         public string OnClick { get; set; }
@@ -85,7 +90,9 @@ namespace JJSolutions.TableList.AspNet.TagHelper
                 HeaderClass = HeaderClass,
                 NoSort = NoSort,
                 OnClick = OnClick,
-                Routes = Routes
+                Routes = Routes,
+                SpecialSort = SpecialSort,
+                LinkTarget = LinkTarget
             });
         }
     }

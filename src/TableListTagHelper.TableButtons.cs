@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace JJSolutions.TableList.AspNet.TagHelper
+namespace JJSolutions.TableList.AspNetCore.TagHelper
 {
     [RestrictChildren("table-button")]
     public class TableButtonsTagHelper : Microsoft.AspNetCore.Razor.TagHelpers.TagHelper
@@ -19,6 +19,9 @@ namespace JJSolutions.TableList.AspNet.TagHelper
         [HtmlAttributeName("column-style")]
         public string ColumnStyle { get; set; }
 
+        [HtmlAttributeName("header-title")]
+        public string HeaderTitle { get; set; } = "Ações";
+
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
             // busca todos os elementos filhos
@@ -28,6 +31,7 @@ namespace JJSolutions.TableList.AspNet.TagHelper
             parentContext.ButtonHeaderStyle = HeaderStyle;
             parentContext.ButtonColumnClass = ColumnClass;
             parentContext.ButtonColumnStyle = ColumnStyle;
+            parentContext.ButtonHeaderTitle = HeaderTitle;
 
             await output.GetChildContentAsync();
         }
@@ -54,8 +58,14 @@ namespace JJSolutions.TableList.AspNet.TagHelper
         [HtmlAttributeName("asp-controller")]
         public string AspController { get; set; }
 
+        [HtmlAttributeName("target")]
+        public string Target { get; set; } = "_self";
+
         [HtmlAttributeName("custom-link")]
         public string CustomLink { get; set; }
+
+        [HtmlAttributeName("custom-link-target")]
+        public string CustomLinkTarget { get; set; } = "_self";
 
         [HtmlAttributeName("on-click")]
         public string OnClick { get; set; }
@@ -86,7 +96,9 @@ namespace JJSolutions.TableList.AspNet.TagHelper
                 AspAction = AspAction,
                 CustomLink = CustomLink,
                 OnClick = OnClick,
-                Routes = Routes
+                Routes = Routes,
+                Target = Target,
+                CustomLinkTarget = CustomLinkTarget
             });
 
             output.SuppressOutput();
